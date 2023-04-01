@@ -1,0 +1,43 @@
+import math
+
+print("Scegli di quale figura vuoi calcolare il perimetro\n")
+
+quiz = True
+while quiz:
+
+	print("quadrato\ncerchio\nrettangolo")
+
+	scelta = str(input('\nHai scelto: '))
+
+	if scelta == 'quadrato':
+		l = float(input())
+		if l > 0:
+			per_quadrato = l*4
+			print(f"Il perimetro è: {per_quadrato}\n")
+		else:
+			print('Valore non valido')
+
+	elif scelta == 'cerchio':
+		p_greco = math.pi
+		r = float(input())
+		if r > 0:
+			per_cerchio = 2*r*p_greco
+			print(f'Il perimetro è: {per_cerchio}\n')
+		else:
+			print('Valore non valido')
+
+	elif scelta == 'rettangolo':
+		base = float(input())
+		altezza = float(input())
+		if base and altezza > 0:
+			per_rettangolo = base*2 + altezza*2
+			print(f'Il perimetro è: {per_rettangolo}\n')
+		else:
+			print('Valore non valido')
+	elif scelta == 'q':
+		quiz = False
+		print('Il quiz è terminato')
+
+	else:
+		print('Opzione non valida, ritenda inserendone una corretta')
+

